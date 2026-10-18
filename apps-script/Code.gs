@@ -1,11 +1,11 @@
 /**
- * Advanced English · Group 6 — results receiver for Google Sheets.
+ * Advanced English · Group 7 — results receiver for Google Sheets.
  * Paste this whole file into Extensions → Apps Script of the results spreadsheet,
  * run setup() once, then Deploy → New deployment → Web app
  *   (Execute as: Me · Who has access: Anyone).
  * Copy the Web App URL (ends with /exec) into assets/config.js → sheetEndpoint.
  */
-var SHEET_ID = '1msnpqbhJD7dzU-9OdlS8Z4D2mQm_hOk3O2o2sfQCSpQ';
+var SHEET_ID = '1O00bAmBTld7p9tXDe-1csbg1QzmwnCVBGejn6DQL1Lo';
 
 var TABS = {
   check:      { name: 'Checks',      head: ['Time', 'Group', 'Lesson', 'Student', 'Exercise', 'Score', 'Total', '%', 'Answers'] },
