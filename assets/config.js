@@ -4,10 +4,8 @@ window.SITE_CONFIG = {
   group: 'Group 7',
   org: 'HSE University · Philology, 1st year',
 
-  /* Google Sheets link (Apps Script Web App URL, ends with /exec).
-     The same results table as group 6: every row has a "Group" column, so the groups don't mix.
-     To use a separate table for group 7, deploy apps-script/Code.gs there and paste its URL here. */
-  sheetEndpoint: 'https://script.google.com/macros/s/AKfycbwMNcKub8KCMXs3VYRwG_Je-vGGsrPLHL7BwcjdzoPt3tUX35u7v920XV7YIv_nBUIT3g/exec',
+  /* Google Sheets link: group 7 results table (Apps Script Web App URL, ends with /exec) */
+  sheetEndpoint: 'https://script.google.com/macros/s/AKfycbzaJON9z5C8G-sRFBW21PGjNK4PelESaYS823HhQGzJcxAPt3D37rGgqfSMeecJa-G7/exec',
 
   /* Our Miro board for group 7 */
   miroBoard: 'https://miro.com/app/board/uXjVEbIZLS4=/'
