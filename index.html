@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Advanced English · Group 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="crumbs"><span id="org"></span><span>Online · 80-minute lessons, twice a week</span></div>
+  <h1>Advanced <em>English</em></h1>
+  <p class="sum">Group 7 · Module 1. Open today’s lesson, write your name once, and do the tasks with us in class. Your answers are saved as you go.</p>
+  <div class="chips"><span class="chip">Outcomes Advanced, 2nd ed.</span><span class="chip">CEFR B2+ / C1</span><span class="chip" id="miro-chip"></span></div>
+  <div class="who"><label for="student-name">Your name</label><input id="student-name" placeholder="First name and surname" autocomplete="name"><span class="hint">Used in every lesson.</span></div>
+</div></header>
+
+<main><div class="wrap">
+  <section class="sec" id="lessons">
+    <div class="sec-head"><span class="no">§ 1</span><h2>Module 1 lessons</h2><span class="meta" id="mod-meta"></span></div>
+    <ol class="lessons" id="lesson-list"></ol>
+  </section>
+
+  <section class="sec" id="grade">
+    <div class="sec-head"><span class="no">§ 2</span><h2>How your grade works</h2><span class="meta">At least three marks of each type in every module</span></div>
+    <div class="grade">
+      <div><b>25%</b>Self-study: projects, presentations, prepared talks</div>
+      <div><b>25%</b>Written work: tests, paragraphs, essays, module test</div>
+      <div><b>20%</b>Oral work: discussions, debates, monologues</div>
+      <div><b>30%</b>Exam: reading, listening, grammar and vocabulary</div>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="sec-head"><span class="no">§ 3</span><h2>How we work</h2></div>
+    <div class="rule"><ul>
+      <li><em>Book:</em> keep your Student’s Book and Workbook open in every class.</li>
+      <li><em>This site:</em> tasks, answers and audio for each lesson. Press <em>Check</em>, then <em>Show answers</em> if you need them.</li>
+      <li><em>Breakout rooms:</em> cameras on in pair work, English only.</li>
+      <li><em>End of the lesson:</em> press <em>Send my work</em> so your teacher gets your answers.</li>
+    </ul></div>
+  </section>
+</div></main>
+
+<footer><div class="wrap"><span>HSE University · Philology · Advanced English, Group 7</span><span>Answers are saved in your browser.</span></div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  var CFG = window.SITE_CONFIG || {}, C = window.COURSE || { lessons: [] };
+  document.getElementById('org').textContent = CFG.org || '';
+  document.getElementById('mod-meta').textContent = C.lessons.length + ' lessons · ' + C.book;
+  var chip = document.getElementById('miro-chip');
+  if (CFG.miroBoard) chip.innerHTML = '<a href="' + CFG.miroBoard + '" target="_blank" rel="noopener">Our Miro board ↗</a>'; else chip.hidden = true;
+  var list = document.getElementById('lesson-list');
+  C.lessons.forEach(function (l) {
+    var li = document.createElement('li');
+    var inner = '<span class="num">' + l.n + '</span><span class="title">' + l.title + '</span>' +
+      '<span class="tag">' + (l.status === 'ready' ? 'Open' : 'Coming soon') + '</span>' +
+      '<span class="topic">' + l.topic + ' · <span class="mono" style="font-size:13px">' + l.pages + '</span></span>';
+    li.innerHTML = l.status === 'ready' ? '<a href="lessons/' + l.slug + '/">' + inner + '</a>' : '<div class="soon">' + inner + '</div>';
+    list.appendChild(li);
+  });
+  var n = document.getElementById('student-name');
+  try { n.value = localStorage.getItem('ae7:name') || ''; } catch (e) {}
+  n.addEventListener('input', function () { try { localStorage.setItem('ae7:name', n.value); } catch (e) {} });
+})();
+</script>
+</body>
+</html>
