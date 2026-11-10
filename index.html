@@ -14,19 +14,16 @@
 <header class="hero"><div class="wrap">
   <div class="crumbs"><span id="org"></span><span>Online · twice a week</span></div>
   <h1>Advanced <em>English</em></h1>
-  <p class="sum">Group 7 · Module 1. Open today’s lesson, write your name once, and do the tasks with us in class. Your answers are saved as you go.</p>
+  <p class="sum">Group 7 · Module 2. Open today’s lesson, write your name once, and do the tasks with us in class. Your answers are saved as you go.</p>
   <div class="chips"><span class="chip">Outcomes Advanced, 2nd ed.</span><span class="chip">CEFR B2+ / C1</span><span class="chip" id="miro-chip"></span></div>
   <div class="who"><label for="student-name">Your name</label><input id="student-name" placeholder="First name and surname" autocomplete="name"><span class="hint">Used in every lesson.</span></div>
 </div></header>
 
 <main><div class="wrap">
-  <section class="sec" id="lessons">
-    <div class="sec-head"><span class="no">§ 1</span><h2>Module 1 lessons</h2><span class="meta" id="mod-meta"></span></div>
-    <ol class="lessons" id="lesson-list"></ol>
-  </section>
+  <div id="modules"></div>
 
   <section class="sec" id="grade">
-    <div class="sec-head"><span class="no">§ 2</span><h2>How your grade works</h2><span class="meta">At least three marks of each type in every module</span></div>
+    <div class="sec-head"><span class="no">§ 3</span><h2>How your grade works</h2><span class="meta">At least three marks of each type in every module</span></div>
     <div class="grade">
       <div><b>25%</b>Self-study: projects, presentations, prepared talks</div>
       <div><b>25%</b>Written work: tests, paragraphs, essays, module test</div>
@@ -36,7 +33,7 @@
   </section>
 
   <section class="sec" id="how">
-    <div class="sec-head"><span class="no">§ 3</span><h2>How we work</h2></div>
+    <div class="sec-head"><span class="no">§ 4</span><h2>How we work</h2></div>
     <div class="rule"><ul>
       <li><em>Book:</em> keep your Student’s Book and Workbook open in every class.</li>
       <li><em>This site:</em> tasks, answers and audio for each lesson. Press <em>Check</em>, then <em>Show answers</em> if you need them.</li>
@@ -54,17 +51,26 @@
 (function () {
   var CFG = window.SITE_CONFIG || {}, C = window.COURSE || { lessons: [] };
   document.getElementById('org').textContent = CFG.org || '';
-  document.getElementById('mod-meta').textContent = C.lessons.length + ' lessons · ' + C.book;
   var chip = document.getElementById('miro-chip');
   if (CFG.miroBoard) chip.innerHTML = '<a href="' + CFG.miroBoard + '" target="_blank" rel="noopener">Our Miro board ↗</a>'; else chip.hidden = true;
-  var list = document.getElementById('lesson-list');
-  C.lessons.forEach(function (l) {
-    var li = document.createElement('li');
-    var inner = '<span class="num">' + l.n + '</span><span class="title">' + l.title + '</span>' +
-      '<span class="tag">' + (l.status === 'ready' ? 'Open' : 'Coming soon') + '</span>' +
-      '<span class="topic">' + l.topic + ' · <span class="mono" style="font-size:13px">' + l.pages + '</span></span>';
-    li.innerHTML = l.status === 'ready' ? '<a href="lessons/' + l.slug + '/">' + inner + '</a>' : '<div class="soon">' + inner + '</div>';
-    list.appendChild(li);
+  var box = document.getElementById('modules');
+  var TAGS = { ready: 'Open', review: 'Review', done: 'Completed', soon: 'Coming soon' };
+  (C.modules || [{ name: C.module || 'Lessons', lessons: C.lessons || [] }]).forEach(function (m, i) {
+    var sec = document.createElement('section');
+    sec.className = 'sec' + (m.state === 'completed' ? ' past' : ''); sec.id = 'module-' + (m.id || i + 1);
+    sec.innerHTML = '<div class="sec-head"><span class="no">§ ' + (i + 1) + '</span><h2>' + m.name + (m.state === 'completed' ? ' · completed' : ' lessons') +
+      '</h2><span class="meta">' + (m.meta || (m.lessons.length + ' lessons · ' + C.book)) + '</span></div><ol class="lessons"></ol>';
+    var list = sec.querySelector('ol');
+    m.lessons.forEach(function (l) {
+      var li = document.createElement('li');
+      var inner = '<span class="num">' + l.n + '</span><span class="title">' + l.title + '</span>' +
+        '<span class="tag' + (l.status === 'done' ? ' done' : '') + '">' + (TAGS[l.status] || '') + '</span>' +
+        '<span class="topic">' + l.topic + ' · <span class="mono" style="font-size:13px">' + l.pages + '</span></span>';
+      var open = (l.status === 'ready' || l.status === 'review') && l.slug;
+      li.innerHTML = open ? '<a href="lessons/' + l.slug + '/">' + inner + '</a>' : '<div class="soon' + (l.status === 'done' ? ' done' : '') + '">' + inner + '</div>';
+      list.appendChild(li);
+    });
+    box.appendChild(sec);
   });
   var n = document.getElementById('student-name');
   try { n.value = localStorage.getItem('ae7:name') || ''; } catch (e) {}

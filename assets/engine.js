@@ -68,8 +68,8 @@
   /* pager */
   var idx = COURSE.lessons.findIndex ? COURSE.lessons.findIndex(function (x) { return x.n === L.number; }) : -1;
   var pager = $('#pager');
-  if (idx > 0 && COURSE.lessons[idx - 1].status === 'ready') pager.insertAdjacentHTML('beforeend', '<a class="btn" href="../' + COURSE.lessons[idx - 1].slug + '/">← Lesson ' + COURSE.lessons[idx - 1].n + '</a>');
-  if (idx > -1 && COURSE.lessons[idx + 1] && COURSE.lessons[idx + 1].status === 'ready') pager.insertAdjacentHTML('beforeend', '<a class="btn" href="../' + COURSE.lessons[idx + 1].slug + '/">Lesson ' + COURSE.lessons[idx + 1].n + ' →</a>');
+  if (idx > 0 && /^(ready|review)$/.test(COURSE.lessons[idx - 1].status)) pager.insertAdjacentHTML('beforeend', '<a class="btn" href="../' + COURSE.lessons[idx - 1].slug + '/">← Lesson ' + COURSE.lessons[idx - 1].n + '</a>');
+  if (idx > -1 && COURSE.lessons[idx + 1] && /^(ready|review)$/.test(COURSE.lessons[idx + 1].status)) pager.insertAdjacentHTML('beforeend', '<a class="btn" href="../' + COURSE.lessons[idx + 1].slug + '/">Lesson ' + COURSE.lessons[idx + 1].n + ' →</a>');
 
   /* ---------- blocks ---------- */
   var main = $('#main');

@@ -231,3 +231,8 @@ footer .wrap{padding-block:24px;font-size:14px;color:var(--muted);display:flex;f
 .mode{color:var(--warm-ink);font-weight:600}
 .frames,.rule ul.frames{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .frames li{padding:6px 12px;border-radius:12px;background:var(--sage-f);border:1px dashed var(--primary);color:var(--ink);font-weight:500}
+
+/* ---------- modules on the home page ---------- */
+.sec.past .lessons li a,.sec.past .lessons li .soon{background:color-mix(in srgb,var(--surface) 70%,var(--bg))}
+.lessons .tag.done{background:var(--sage-f);color:var(--primary-ink)}
+.lessons li .soon.done{opacity:1;border-style:solid}
