@@ -8,7 +8,7 @@ window.LESSON = {
   titleHtml: 'Culture and <em>society</em>',
   duration: '90 min · online',
   summary: 'Describe a society precisely, challenge a stereotype politely, make your opinions punchier with cleft sentences — and turn what you say into the thesis of an essay.',
-  chips: ['Outcomes Advanced · Unit 3', 'SB pp. 24–27', 'Audio track 7 · script p. 199', 'Grammar reference p. 168'],
+  chips: ['Outcomes Advanced · Unit 3', 'SB pp. 24–27', 'Audio 7 on this page · script p. 199', 'Grammar reference p. 168'],
 
   track: [
     ['hospitality', '\\bhospitab|\\bhospitality'], ['male-dominated', 'male[- ]dominated'], ['looked down on', '\\blook(ed|s|ing)? down on'],
@@ -120,7 +120,10 @@ window.LESSON = {
 
     { id: 's4', short: '4 Listening', title: 'Three conversations', meta: 'SB p. 27 · ex. 3–5 · audio track 7 · 15 min',
       blocks: [
-        { type: 'rule', title: 'How we listen', html: '<p>Your teacher plays the audio through screen share. First time: just three things for each conversation — <em>what part of culture</em>, <em>whose culture</em>, <em>how they feel</em>. Notes only.</p>' },
+        { type: 'rule', title: 'How we listen', html: '<p>First time: just three things for each conversation — <em>what part of culture</em>, <em>whose culture</em>, <em>how they feel</em>. Notes only. Second time: the true / false / not mentioned task.</p>' },
+        { type: 'audio', src: '../../assets/audio/u03-track07-society-and-culture.mp3', src_label: 'Audio 7', title: 'Three conversations about society and culture',
+          marks: [['Conversation 1', 3], ['Conversation 2', 107], ['Conversation 3', 173]],
+          note: 'Listen once for the gist (ex. 3), then again for the details (ex. 4). Use ↺ 5 s to replay a phrase. Headphones on, please.' },
         { type: 'ex', id: 'lis3', kind: 'open', src: 'SB p. 27 · ex. 3', title: 'First listening: the gist', mode: 'Individually, then pairs',
           instr: 'For each conversation: 1 What aspect of culture? 2 Are they talking about their own culture? 3 What feelings are expressed?',
           prompts: [{ q: 'Conversation 1 (Chrissy and Zoe)', rows: 2 }, { q: 'Conversation 2', rows: 2 }, { q: 'Conversation 3', rows: 2 }],
@@ -153,7 +156,7 @@ window.LESSON = {
         { type: 'ex', id: 'ex5', kind: 'open', src: 'SB p. 27 · ex. 5', title: 'Talk about it', mode: 'If there’s time · groups',
           instr: 'Have you ever misinterpreted something, or been misinterpreted? What is your worst experience of bureaucracy? Can a government change aspects of culture?',
           prompts: [{ q: 'Notes', rows: 3, track: true }] },
-        { type: 'note', html: '<p>Перед запуском: <i>Can everyone hear the audio clearly?</i> (включите звук демонстрации экрана). Первое прослушивание — не тест: <i>What did you catch? Anything at all.</i></p><p>Второе: <i>Why ‘not mentioned’ and not ‘false’? What exactly did she say?</i> При разногласиях проиграйте только нужный отрывок.</p><p>Ex. 5 — только если есть время; иначе вопрос про TV, education, money, travel переносится в стадию 6.</p><p>Переход: <i>Zoe didn’t say ‘He hates the comments’. She said ‘What he hates is all the bitchy comments’. Why?</i></p>' }
+        { type: 'note', html: '<p>Запись есть прямо на странице: можно включить её у себя и демонстрировать экран со звуком или попросить студентов слушать самостоятельно в наушниках (в парах на второй раз удобно). Перед запуском: <i>Can everyone hear the audio clearly?</i> Первое прослушивание — не тест: <i>What did you catch? Anything at all.</i></p><p>Второе: <i>Why ‘not mentioned’ and not ‘false’? What exactly did she say?</i> При разногласиях проиграйте только нужный отрывок.</p><p>Ex. 5 — только если есть время; иначе вопрос про TV, education, money, travel переносится в стадию 6.</p><p>Переход: <i>Zoe didn’t say ‘He hates the comments’. She said ‘What he hates is all the bitchy comments’. Why?</i></p>' }
       ] },
 
     { id: 's5', short: '5 Cleft', title: 'Cleft sentences', meta: 'SB p. 27 · ex. 6–8 · Grammar reference p. 168 · 15 min',

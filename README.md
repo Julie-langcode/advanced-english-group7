@@ -10,7 +10,7 @@
 |---|------|-----------|
 | 1 | Cities | SB pp. 6–9 · WB pp. 4, 6 · аудио 1.1 |
 | 2 | Urban renewal | SB pp. 10–11, GR p. 166 · Files 1–4 · WB pp. 6–8 |
-| 3 | Culture and society | SB pp. 24–27, GR p. 168 · audio track 7 (учитель включает через демонстрацию экрана) · эссе: вступление |
+| 3 | Culture and society | SB pp. 24–27, GR p. 168 · audio track 7 (на странице урока) · эссе: вступление |
 
 ## Как устроен сайт
 
