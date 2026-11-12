@@ -7,8 +7,8 @@ window.LESSON = {
   title: 'Culture and society',
   titleHtml: 'Culture and <em>society</em>',
   duration: '90 min · online',
-  summary: 'Describe a society precisely, challenge a stereotype politely, make your opinions punchier with cleft sentences — and turn what you say into the thesis of an essay.',
-  chips: ['Outcomes Advanced · Unit 3', 'SB pp. 24–27', 'Audio 7 on this page · script p. 199', 'Grammar reference p. 168'],
+  summary: 'Describe a society precisely, challenge a stereotype politely, and turn what you say into the thesis of an essay.',
+  chips: ['Outcomes Advanced · Unit 3', 'SB pp. 24–27', 'Audio 7 on this page · script p. 199'],
 
   track: [
     ['hospitality', '\\bhospitab|\\bhospitality'], ['male-dominated', 'male[- ]dominated'], ['looked down on', '\\blook(ed|s|ing)? down on'],
@@ -31,14 +31,13 @@ window.LESSON = {
           { t: '8–28 min', n: 'Society and culture: the chunks', href: '#s2' },
           { t: '28–38 min', n: 'Challenging overgeneralisations', href: '#s3' },
           { t: '38–53 min', n: 'Listening: three conversations', href: '#s4' },
-          { t: '53–68 min', n: 'Cleft sentences', href: '#s5' },
-          { t: '68–80 min', n: 'Speaking: say it twice', href: '#s6' },
-          { t: '80–87 min', n: 'From opinion to essay thesis', href: '#s7' },
-          { t: '87–90 min', n: 'Reflect, homework, send', href: '#s9' },
+          { t: '53–70 min', n: 'Speaking: say it twice', href: '#s6' },
+          { t: '70–85 min', n: 'From opinion to essay thesis', href: '#s7' },
+          { t: '85–90 min', n: 'Reflect, homework, send', href: '#s9' },
           { t: 'Board', n: 'Our Miro board ↗', href: 'miro' }
         ] },
-        { type: 'rule', title: 'Today you will learn to', html: '<ul><li>discuss different aspects of culture and society with precise phrases;</li><li>politely challenge stereotypes and overgeneralisations;</li><li>express feelings and opinions more emphatically with cleft sentences;</li><li>turn a spoken opinion into the thesis of an essay.</li></ul>' },
-        { type: 'note', html: '<p><b>Подготовка:</b> аудио track 7 (SB Unit 3) для демонстрации экрана со звуком; доска Miro с 4 зонами: Society and culture · Challenging · Cleft frames · Your language. Два набора сессионных залов: пары для стадий 1–3, новые пары для второго раунда в стадии 6.</p><p><b>Оценки:</b> аудиторная работа (участие и новая лексика в стадиях 3, 6, 7); старт письменной работы по теме — эссе 250+ слов, сегодня тренируем критерий Task Response.</p>' }
+        { type: 'rule', title: 'Today you will learn to', html: '<ul><li>discuss different aspects of culture and society with precise phrases;</li><li>politely challenge stereotypes and overgeneralisations;</li><li>turn a spoken opinion into the thesis of an essay.</li></ul>' },
+        { type: 'note', html: '<p><b>Подготовка:</b> аудио track 7 (SB Unit 3) для демонстрации экрана со звуком; доска Miro с 4 зонами: Society and culture · Challenging · Your language. Два набора сессионных залов: пары для стадий 1–3, новые пары для второго раунда в стадии 6.</p><p><b>Оценки:</b> аудиторная работа (участие и новая лексика в стадиях 3, 6, 7); старт письменной работы по теме — эссе 250+ слов, сегодня тренируем критерий Task Response.</p>' }
       ] },
 
     { id: 's1', short: '1 Warm-up', title: 'What would surprise a foreigner?', meta: 'SB p. 24 · ex. 1 · 8 min',
@@ -159,41 +158,7 @@ window.LESSON = {
         { type: 'note', html: '<p>Запись есть прямо на странице: можно включить её у себя и демонстрировать экран со звуком или попросить студентов слушать самостоятельно в наушниках (в парах на второй раз удобно). Перед запуском: <i>Can everyone hear the audio clearly?</i> Первое прослушивание — не тест: <i>What did you catch? Anything at all.</i></p><p>Второе: <i>Why ‘not mentioned’ and not ‘false’? What exactly did she say?</i> При разногласиях проиграйте только нужный отрывок.</p><p>Ex. 5 — только если есть время; иначе вопрос про TV, education, money, travel переносится в стадию 6.</p><p>Переход: <i>Zoe didn’t say ‘He hates the comments’. She said ‘What he hates is all the bitchy comments’. Why?</i></p>' }
       ] },
 
-    { id: 's5', short: '5 Cleft', title: 'Cleft sentences', meta: 'SB p. 27 · ex. 6–8 · Grammar reference p. 168 · 15 min',
-      blocks: [
-        { type: 'ex', id: 'cl6', kind: 'gap', src: 'SB p. 27 · ex. 6', title: 'What did they actually say?', mode: 'Pairs · use script p. 199', wide: true,
-          instr: 'The plain sentences on the left are what the speakers <i>meant</i>. Complete what they <i>actually</i> said.',
-          items: [
-            { n: 1, t: 'He seems to be struggling with the people. → It’s ___ that he seems to be struggling with.', a: ['the people'] },
-            { n: 2, t: 'He hates all the bitchy comments. → What ___ is all the bitchy comments and gossip.', a: ['he hates'] },
-            { n: 3, t: 'They only stared at their screens. → All ___ was stare at their computer screens or file papers.', a: ['they did'] },
-            { n: 4, t: 'It really frustrates me. → The thing that ___ is the fact that they only ever seem to have one person serving you.', a: ['really frustrates me'] }
-          ] },
-        { type: 'rule', title: 'Three frames for a stronger opinion', html: '<ul class="frames"><li>What really frustrates / worries / amazes me is (the fact that) …</li><li>It’s X that …, not Y.</li><li>The thing I like / find hardest about … is …</li><li>One thing that gives me hope is …</li><li>All they want to do is …</li></ul><p>The important information moves to the <em>start</em> or the <em>end</em>. Stress it: <i>What really FRUSTRATES me is the BUREAUcracy.</i> Watch out: <s>What I like it is …</s> → <i>What I like is …</i></p>' },
-        { type: 'ex', id: 'cl-stress', kind: 'stress', src: 'Pronunciation', title: 'Where is the strongest stress?', mode: 'Say it aloud · 1 min',
-          instr: 'Tap the word that carries the main stress — the one the speaker is focusing on.',
-          items: [
-            { t: 'It’s the people that he’s struggling with, not the weather.', a: ['people'] },
-            { t: 'It’s not the government that should do something.', a: ['government'] },
-            { t: 'It’s people’s attitudes that need to change.', a: ['attitudes'] }
-          ] },
-        { type: 'ex', id: 'cl7', kind: 'gap', src: 'SB p. 27 · ex. 7', title: 'Make cleft sentences', mode: 'Individually, then compare · 5 min', wide: true,
-          instr: 'Write the full sentence from the prompts. Add words and change verb forms if you need to.',
-          items: [
-            { n: 1, t: 'B: Yeah, but ___', hint: '(thing / like about our way of life / fact / be yourself)', a: [['the thing i like about our way of life is the fact that you can be yourself', 'the thing that i like about our way of life is the fact that you can be yourself', 'the thing i like about our way of life is that you can be yourself']] },
-            { n: 2, t: 'A: Yeah, but ___', hint: '(what / concern / people lose touch with their roots)', a: [['what concerns me is that people are losing touch with their roots', 'what concerns me is that people lose touch with their roots', 'what concerns me is the fact that people are losing touch with their roots']] },
-            { n: 3, t: 'B: In fact, ___', hint: '(one / frustrate / lack / social mobility)', a: [['one thing that frustrates me is the lack of social mobility', 'one thing which frustrates me is the lack of social mobility', 'the one thing that frustrates me is the lack of social mobility']] },
-            { n: 4, t: 'B: ___', hint: '(it / not the government / do something; people’s attitudes / need to change)', a: [['it is not the government that should do something it is people\'s attitudes that need to change', 'it is not the government that should be doing something it is people\'s attitudes that need to change', 'it is not the government that needs to do something it is people\'s attitudes that need to change']] },
-            { n: 5, t: 'B: ___', hint: '(one / give / hope / fact / young people / not seem interested in people’s backgrounds)', a: [['one thing that gives me hope is the fact that young people do not seem all that interested in people\'s backgrounds', 'the one thing that gives me hope is the fact that young people do not seem all that interested in people\'s backgrounds', 'one thing that gives me hope is the fact that young people do not seem interested in people\'s backgrounds', 'one thing that gives me hope is that young people do not seem interested in people\'s backgrounds']] },
-            { n: 6, t: 'A: Maybe. ___', hint: '(all / they / want / do / go shopping)', a: [['all they want to do is go shopping', 'all they want to do is to go shopping']] }
-          ] },
-        { type: 'ex', id: 'cl8', kind: 'open', src: 'SB p. 27 · ex. 8', title: 'Read the dialogue aloud', mode: 'Pairs · 2 min',
-          instr: 'Read the completed dialogue in pairs. Put a strong stress on the words you have brought to the front. Then write one cleft sentence of your own about where you live.',
-          prompts: [{ q: 'My cleft sentence', rows: 2, track: true }] },
-        { type: 'note', html: '<p>Сначала форма в тексте, термин <i>cleft sentence</i> — в конце, одной фразой. CCQ: <i>‘It’s the people that he’s struggling with.’ Is he struggling with the weather? So what is the speaker correcting?</i></p><p>Back-chaining хором с включёнными микрофонами: <i>…BUREAUcracy / is the BUREAUcracy / What really FRUSTRATES me is the BUREAUcracy.</i></p><p>Ex. 7: ответы — полные предложения; принимаются основные варианты, остальное проверяйте устно. GR p. 168 ex. 1–3 — дома.</p>' }
-      ] },
-
-    { id: 's6', short: '6 Speaking', title: 'Say it twice', meta: 'Planning → round 1 → language focus → round 2 · 12 min',
+    { id: 's6', short: '5 Speaking', title: 'Say it twice', meta: 'Planning → round 1 → language focus → round 2 · 12 min',
       blocks: [
         { type: 'ex', id: 'sp-plan', kind: 'open', src: 'Planning', title: 'What I value, what worries me', mode: 'Individually · 3 min',
           instr: 'Think about Russia, St Petersburg or a country you know well. Complete at least three frames — key words only, not full text.',
@@ -211,7 +176,7 @@ window.LESSON = {
         { type: 'note', html: '<p>Цикл Goh & Burns: задание → фокус на языке → повтор. В первом раунде не вмешивайтесь, записывайте фразы дословно.</p><p>Между раундами на Miro 3–4 фразы студентов: две удачные, две с пропуском или ошибкой: <i>Our culture revolves about the family. → around</i>; <i>People have lost ___ with their traditions. → touch</i>.</p><p>Если разговор затихает: <i>Why do you think that is? Is that true for your parents’ generation too? What would a foreigner find hardest about that?</i></p>' }
       ] },
 
-    { id: 's7', short: '7 Essay', title: 'From opinion to essay thesis', meta: 'Written mark · Task Response · 7 min',
+    { id: 's7', short: '6 Essay', title: 'From opinion to essay thesis', meta: 'Written mark · Task Response · 7 min',
       blocks: [
         { type: 'rule', title: 'Our essay question for this topic', html: '<p><em>Some people believe that globalisation is making national cultures disappear. Others argue that it makes them stronger. Discuss both views and give your own opinion.</em> (250+ words)</p>' },
         { type: 'rule', title: 'From what you say to what you write', html: '<ol><li><em>Spoken opinion:</em> What worries me is that young people are losing touch with their traditions.</li><li><em>Paraphrase of the task:</em> It is often claimed that global culture is gradually erasing national traditions, while others maintain that it encourages people to value their roots.</li><li><em>Thesis (cleft + hedging):</em> What this essay will argue is that, although globalisation has weakened some traditions, it has made people more aware of their cultural identity.</li></ol><p>For full marks in <em>Task Response</em>: the task is fully paraphrased and the introduction ends with a clear thesis that shows your position.</p>' },
@@ -222,11 +187,11 @@ window.LESSON = {
         { type: 'note', html: '<p><i>Could you use ‘take the mickey’ or ‘drives me insane’ here? Why not?</i></p><p>Разберите анонимно две работы: одну сильную, одну с типичной проблемой. Комментарии: <i>Very clear position — I know exactly what this essay will argue.</i> / <i>Your thesis just repeats the question. What’s YOUR view?</i> / <i>You’ve copied ‘national cultures disappear’ from the task — find another way to say it.</i></p>' }
       ] },
 
-    { id: 's8', short: '8 Words', title: 'Lesson words', meta: 'Society and culture · challenging · from the listening', blocks: [{ type: 'words' }] },
+    { id: 's8', short: '7 Words', title: 'Lesson words', meta: 'Society and culture · challenging · from the listening', blocks: [{ type: 'words' }] },
 
-    { id: 's9', short: '9 Homework', title: 'Homework and reflection', meta: 'Due Lesson 4 · Objects and identity',
+    { id: 's9', short: '8 Homework', title: 'Homework and reflection', meta: 'Due Lesson 4 · Objects and identity',
       blocks: [
-        { type: 'rule', title: 'For next lesson', html: '<ol><li><em>Grammar:</em> Grammar reference p. 168, ex. 1–3 (cleft sentences).</li><li><em>Vocabulary:</em> write 10 chunks from today in your notebook, each with your own example about Russia or a country you’ve been to.</li><li><em>Writing:</em> the introduction to the essay below. We continue with the argument next lesson.</li></ol>' },
+        { type: 'rule', title: 'For next lesson', html: '<ol><li><em>Vocabulary:</em> write 10 chunks from today in your notebook, each with your own example about Russia or a country you’ve been to.</li><li><em>Writing:</em> the introduction to the essay below. We continue with the argument next lesson.</li></ol>' },
         { type: 'ex', id: 'hw-intro', kind: 'open', src: 'Written work · essay', title: 'Introduction: globalisation and national cultures', mode: '50–70 words · due Lesson 4',
           instr: 'Write the introduction: a paraphrase of the task and a clear thesis. Use at least three chunks from this lesson and one cleft sentence.',
           prompts: [{ q: 'My introduction', rows: 6, track: true, words: [50, 70] }],
@@ -238,7 +203,7 @@ window.LESSON = {
       ] }
   ],
 
-  cando: ['I can describe a society precisely with phrases like “revolves around” and “lost touch with”.', 'I can challenge a stereotype politely.', 'I can make my opinion more emphatic with a cleft sentence.', 'I can write a paraphrase of an essay task and a clear thesis.'],
+  cando: ['I can describe a society precisely with phrases like “revolves around” and “lost touch with”.', 'I can challenge a stereotype politely.', 'I can write a paraphrase of an essay task and a clear thesis.'],
 
   words: [
     ['hospitality is central to the culture', 'guests are always welcomed warmly', 'гостеприимство — основа культуры', 'Hospitality is central to the culture — no guest leaves hungry.'],
