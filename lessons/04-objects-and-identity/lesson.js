@@ -180,10 +180,9 @@ window.LESSON = {
 
     { id: 's5', short: '5 Lecture', title: 'Listening: a lecture on identity', meta: 'SB p. 31 · ex. 9–12 · audio 10 · 12 min',
       blocks: [
-        { type: 'rule', title: 'How we listen', html: '<p>First time: just the big idea — no need to catch every detail. Second time: how the lecturer connects six things to the argument. Your teacher plays audio 10.</p>' },
-        { type: 'audio', src: '../../assets/audio/u03-track09-phrases-with-thing.mp3', src_label: 'Audio 9', title: 'Phrases with thing — listen and repeat',
-          marks: [['1 no big thing', 5], ['2 the done thing', 9.3], ['3 a fine thing', 15.3], ['4 the furthest thing', 21.2], ['5 first thing', 27.5], ['6 the sort of thing', 35.1], ['7 one thing and another', 41], ['8 one thing led to another', 46.8]] },
-        { type: 'rule', title: 'Audio 9 · eight phrases with thing (SB p. 31 · ex. 7)', html: '<ol><li><b>It’s really no big thing.</b> — it’s not important · <i>ничего особенного</i></li><li><b>It’s just not the done thing.</b> — it isn’t acceptable here · <i>так не принято</i></li><li><b>Chance would be a fine thing!</b> — it’s very unlikely to happen · <i>если бы!</i></li><li><b>It’s the furthest thing from my mind.</b> — I’m not thinking about it at all · <i>мне сейчас совсем не до этого</i></li><li><b>first thing in the morning</b> — very early, before anything else · <i>первым делом утром</i></li><li><b>It’s the sort of thing that makes you glad to be alive.</b> · <i>именно такие вещи радуют жизнь</i></li><li><b>what with one thing and another</b> — for various reasons · <i>то одно, то другое</i></li><li><b>One thing just led to another.</b> — it happened step by step, unplanned · <i>слово за слово, так вышло</i></li></ol><p>Listen and notice the stress, then listen again and repeat. These phrases are for speaking — not for your essay.</p>' },
+        { type: 'rule', title: 'How we listen', html: '<p>First time: just the big idea — no need to catch every detail. Second time: how the lecturer connects six things to the argument. Audio 10 is right here — you can listen again at home.</p>' },
+        { type: 'audio', src: '../../assets/audio/u03-track10-lecture-on-identity.mp3', src_label: 'Audio 10', title: 'A lecture on culture and identity',
+          marks: [['From the start', 0], ['Second half', 90]] },
         { type: 'ex', id: 'lec9', kind: 'open', src: 'SB p. 31 · ex. 9–10', title: 'The main argument in one sentence', mode: 'Individually, then compare in pairs · 5 min',
           prompts: [
             { q: 'The lecturer’s main argument', rows: 2, track: true },
