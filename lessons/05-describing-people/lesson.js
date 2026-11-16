@@ -141,7 +141,9 @@ window.LESSON = {
 
     { id: 's5', short: '5 Listening', title: 'Listening: three conversations', meta: 'SB p. 17 · ex. 8–10 · Track 4 · 15 min',
       blocks: [
-        { type: 'rule', title: 'How we listen', html: '<p>First time: who they’re talking about and what that person is like — don’t worry about every word. Second time: the exact chunks.</p>' },
+        { type: 'rule', title: 'How we listen', html: '<p>First time: who they’re talking about and what that person is like — don’t worry about every word. Second time: the exact chunks. The audio is right here — you can listen again at home.</p>' },
+        { type: 'audio', src: '../../assets/audio/u02-track04-three-conversations.mp3', src_label: 'Audio 4', title: 'Three conversations about different people',
+          marks: [['Conversation 1', 0], ['Conversation 2', 68], ['Conversation 3', 129]] },
         { type: 'ex', id: 'l8', kind: 'pick', src: 'SB p. 17 · ex. 8', title: 'Who is the person they mainly talk about?', mode: 'Individually, then pairs · 5 min', opts: ['a manager', 'a pop or rock star', 'people in a student residence'],
           items: [
             { n: 1, t: 'Conversation 1', a: 'a manager', note: 'dragging the whole team down · go over his head · blames everyone below him' },
@@ -179,7 +181,7 @@ window.LESSON = {
             { q: 'Have you ever shared accommodation with anyone? How was it?', track: true },
             { q: 'Have you ever hit it off with someone straight away? Who with?', track: true }
           ] },
-        { type: 'note', html: '<p><b>Track 4</b> — включить с демонстрацией экрана со звуком (скрипт: TB pp. 21–22). При проверке ex. 8 студенты обосновывают ответ: что именно услышали.</p><p>drag someone down = make someone perform worse · hit it off = get on well immediately · go over someone’s head = talk to their boss</p><p>Мостик: <i>Now it’s your turn to talk about the people in your life.</i></p>' }
+        { type: 'note', html: '<p><b>Track 4</b> — плеер на странице: студенты могут слушать сами, или включите его с демонстрацией экрана со звуком. Кнопки переходят к разговорам 1–3 (скрипт: TB pp. 21–22). При проверке ex. 8 студенты обосновывают ответ: что именно услышали.</p><p>drag someone down = make someone perform worse · hit it off = get on well immediately · go over someone’s head = talk to their boss</p><p>Мостик: <i>Now it’s your turn to talk about the people in your life.</i></p>' }
       ] },
 
     { id: 's6', short: '6 Speaking', title: 'Conversation practice', meta: 'SB p. 17 · ex. 11–12 · say it twice · 14 min',
