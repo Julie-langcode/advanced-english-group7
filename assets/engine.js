@@ -16,6 +16,15 @@
     set: function (k, v, global) { try { localStorage.setItem((global ? G : NS) + k, v); } catch (e) {} },
     clear: function () { try { Object.keys(localStorage).filter(function (k) { return k.indexOf(NS) === 0; }).forEach(function (k) { localStorage.removeItem(k); }); } catch (e) {} }
   };
+  /* answers: set answers: 'open' in config.js to let students see keys and ideas again.
+     By default only the teacher (lesson opened once with #teacher) sees answers, ideas and notes. */
+  if (location.hash === '#teacher') store.set('teacher-on', '1', true);
+  if (location.hash === '#student') store.set('teacher-on', '0', true);
+  var TEACHER = store.get('teacher-on', true) === '1';
+  var HIDE = CFG.answers !== 'open' && !TEACHER;
+  function enc(a) { return HIDE ? 'x' + btoa(unescape(encodeURIComponent(JSON.stringify(a)))) : JSON.stringify(a); }
+  function dec(s) { return s.charAt(0) === 'x' ? JSON.parse(decodeURIComponent(escape(atob(s.slice(1))))) : JSON.parse(s); }
+  function keyEl(cls, html) { return HIDE ? document.createComment('') : h(cls === 'key' ? 'span' : 'span', cls, html); }
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
   function h(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
@@ -85,7 +94,7 @@
     switch (b.type) {
       case 'lead': return h('p', 'lead', b.html);
       case 'rule': return h('div', 'rule', (b.title ? '<h3>' + b.title + '</h3>' : '') + b.html);
-      case 'note': return h('div', 'tnote', b.html);
+      case 'note': return HIDE ? null : h('div', 'tnote', b.html);
       case 'map': return renderMap(b);
       case 'audio': return renderAudio(b);
       case 'ex': EXDEF[b.id] = b; return renderEx(b);
@@ -148,13 +157,13 @@
             var f;
             if (d.select) { f = h('select', 'f'); f.innerHTML = '<option value="">…</option>' + d.bank.map(function (w) { return '<option>' + w + '</option>'; }).join(''); }
             else { f = h('input', 'f' + (d.wide ? ' wide' : '')); f.type = 'text'; f.autocomplete = 'off'; f.spellcheck = false; f.setAttribute('autocapitalize', 'off'); }
-            f.dataset.key = id + '-' + i + '-' + j; f.dataset.ans = JSON.stringify(arr(it.a[j]));
+            f.dataset.key = id + '-' + i + '-' + j; f.dataset.ans = enc(arr(it.a[j]));
             f.setAttribute('aria-label', 'Gap ' + (it.n != null ? it.n : i) + (parts.length > 2 ? '.' + (j + 1) : ''));
-            txt.appendChild(f); txt.appendChild(h('span', 'key', esc(arr(it.a[j])[0])));
+            txt.appendChild(f); txt.appendChild(keyEl('key', esc(arr(it.a[j])[0])));
           }
         });
         if (it.hint) txt.insertAdjacentHTML('beforeend', ' <span class="hint">' + it.hint + '</span>');
-        if (it.note) txt.appendChild(h('span', 'key note', it.note));
+        if (it.note) txt.appendChild(keyEl('key note', it.note));
         li.appendChild(txt); ol.appendChild(li);
       });
       card.appendChild(ol);
@@ -166,8 +175,8 @@
         var li = h('li'); li.innerHTML = '<span class="n">' + (i + 1) + '</span>';
         var txt = h('span', 'txt', t + ' ');
         var f = h('select', 'f'); f.innerHTML = '<option value="">…</option>' + d.opts.map(function (o) { return '<option value="' + o[0] + '">' + o[0] + '</option>'; }).join('');
-        f.dataset.key = id + '-' + i; f.dataset.ans = JSON.stringify([d.key[i]]); f.setAttribute('aria-label', 'Answer for ' + (i + 1));
-        txt.appendChild(f); txt.appendChild(h('span', 'key', d.key[i])); li.appendChild(txt); ol.appendChild(li);
+        f.dataset.key = id + '-' + i; f.dataset.ans = enc([d.key[i]]); f.setAttribute('aria-label', 'Answer for ' + (i + 1));
+        txt.appendChild(f); txt.appendChild(keyEl('key', d.key[i])); li.appendChild(txt); ol.appendChild(li);
       });
       card.appendChild(ol);
       card.appendChild(h('ul', 'opts', d.opts.map(function (o) { return '<li><b>' + o[0] + '</b>' + o[1] + '</li>'; }).join('')));
@@ -180,10 +189,10 @@
         var li = h('li'); li.innerHTML = '<span class="n">' + (it.n != null ? it.n : '') + '</span>';
         var txt = h('span', 'txt', it.t + ' ');
         var opts = it.opts || d.opts;
-        var g = h('span', 'grp'); g.dataset.key = id + '-' + i; g.dataset.ans = JSON.stringify(arr(it.a)); g.setAttribute('role', 'radiogroup'); g.setAttribute('aria-label', strip(it.t));
+        var g = h('span', 'grp'); g.dataset.key = id + '-' + i; g.dataset.ans = enc(arr(it.a)); g.setAttribute('role', 'radiogroup'); g.setAttribute('aria-label', strip(it.t));
         opts.forEach(function (o) { g.insertAdjacentHTML('beforeend', '<label><input type="radio" name="' + id + '-' + i + '" value="' + esc(o) + '"><span>' + o + '</span></label>'); });
-        txt.appendChild(g); txt.appendChild(h('span', 'key', esc(arr(it.a)[0])));
-        if (it.note) txt.appendChild(h('span', 'key note', it.note));
+        txt.appendChild(g); txt.appendChild(keyEl('key', esc(arr(it.a)[0])));
+        if (it.note) txt.appendChild(keyEl('key note', it.note));
         li.appendChild(txt); ol.appendChild(li);
       });
       card.appendChild(ol);
@@ -193,9 +202,9 @@
       ol = h('ol', 'items');
       d.items.forEach(function (it, i) {
         var li = h('li'); li.innerHTML = '<span class="n">' + (i + 1) + '</span>';
-        var g = h('span', 'txt words grp'); g.dataset.key = id + '-' + i; g.dataset.ans = JSON.stringify(it.a); g.setAttribute('role', 'radiogroup'); g.setAttribute('aria-label', 'Sentence ' + (i + 1));
+        var g = h('span', 'txt words grp'); g.dataset.key = id + '-' + i; g.dataset.ans = enc(it.a); g.setAttribute('role', 'radiogroup'); g.setAttribute('aria-label', 'Sentence ' + (i + 1));
         it.t.split(' ').forEach(function (w) { g.insertAdjacentHTML('beforeend', '<label><input type="radio" name="' + id + '-' + i + '" value="' + esc(norm(w)) + '"><span>' + w + '</span></label> '); });
-        g.appendChild(h('span', 'key', it.a[0])); li.appendChild(g); ol.appendChild(li);
+        g.appendChild(keyEl('key', it.a[0])); li.appendChild(g); ol.appendChild(li);
       });
       card.appendChild(ol);
     }
@@ -217,11 +226,11 @@
 
     if (d.kind === 'budget') card.appendChild(renderBudget(d));
 
-    if (d.model) card.appendChild(h('div', 'model', d.model));
+    if (d.model && !HIDE) card.appendChild(h('div', 'model', d.model));
     var scored = !!SCORED[d.kind];
     var acts = '<div class="actions">';
-    if (scored) acts += '<button class="btn primary" data-act="check">Check</button><button class="btn" data-act="show" disabled title="Try first, then you can see the answers">Show answers</button>';
-    if (d.model) acts += '<button class="btn" data-act="model" aria-expanded="false">' + (d.modelLabel || 'Show ideas') + '</button>';
+    if (scored) acts += '<button class="btn primary" data-act="check">Check</button>' + (HIDE ? '' : '<button class="btn" data-act="show" disabled title="Try first, then you can see the answers">Show answers</button>');
+    if (d.model && !HIDE) acts += '<button class="btn" data-act="model" aria-expanded="false">' + (d.modelLabel || 'Show ideas') + '</button>';
     if (d.kind === 'open' || d.kind === 'budget') acts += '<button class="btn" data-act="sendopen">Send to teacher</button>';
     acts += '<button class="btn" data-act="clear">Clear</button>';
     if (scored) acts += '<span class="score" aria-live="polite"></span>';
@@ -363,7 +372,7 @@
   function check(card, silent) {
     var fs = fields(card), c = 0;
     fs.forEach(function (f) {
-      var v = norm(fieldVal(f)); var ans = JSON.parse(f.dataset.ans).map(norm);
+      var v = norm(fieldVal(f)); var ans = dec(f.dataset.ans).map(norm);
       var ok = v !== '' && ans.indexOf(v) > -1;
       f.classList.toggle('ok', ok); f.classList.toggle('bad', !ok); if (ok) c++;
     });
