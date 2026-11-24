@@ -21,7 +21,10 @@ window.COURSE = {
           pages: 'SB pp. 20–21' },
         { n: 7, slug: '07-mini-project', status: 'soon',
           title: 'Mini-project and review', topic: 'Team defence · Review 1',
-          pages: 'SB p. 23' }
+          pages: 'SB p. 23' },
+        { n: 8, slug: '08-reading-lonely-connected', status: 'ready',
+          title: 'Reading: Lonely and connected', topic: 'Extra reading · a real article on friendship and loneliness · chunks · critical reading',
+          pages: 'KU News, Nov 2025' }
       ] },
     { id: 1, name: 'Module 1', state: 'completed', meta: 'Lessons stay open for review',
       lessons: [
