@@ -19,12 +19,15 @@ window.COURSE = {
         { n: 6, slug: '06-would', status: 'ready',
           title: 'Relationships and would', topic: 'Kinds of relationships · Toby: mixed messages · would · talking through problems · project consultation',
           pages: 'SB pp. 20–21' },
-        { n: 7, slug: '07-mini-project', status: 'soon',
-          title: 'Mini-project and review', topic: 'Team defence · Review 1',
-          pages: 'SB p. 23' },
+        { n: 7, slug: '07-mini-project', status: 'done',
+          title: 'Project presentations', topic: 'Relationships projects · presentations and questions',
+          pages: 'Unit 2' },
         { n: 8, slug: '08-reading-lonely-connected', status: 'ready',
           title: 'Reading: Lonely and connected', topic: 'Extra reading · a real article on friendship and loneliness · chunks · critical reading',
-          pages: 'KU News, Nov 2025' }
+          pages: 'KU News, Nov 2025' },
+        { n: 9, slug: '09-conflict-arguments', status: 'ready',
+          title: 'Conflict: clear the air', topic: 'Arguments and discussions · two arguments (Audio 17) · defending and excusing · wish and if only',
+          pages: 'SB pp. 50–53' }
       ] },
     { id: 1, name: 'Module 1', state: 'completed', meta: 'Lessons stay open for review',
       lessons: [
