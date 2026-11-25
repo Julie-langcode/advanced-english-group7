@@ -37,7 +37,7 @@ window.LESSON = {
           { t: 'Board', n: 'Our Miro board ↗', href: 'miro' }
         ] },
         { type: 'rule', title: 'Today you will learn to', html: '<ul><li>handle arguments in a constructive way;</li><li>tell which phrases calm an argument down — and which make it worse;</li><li>defend and excuse your position and behaviour;</li><li>talk about how you’d like things to be different with <i>wish</i> and <i>if only</i>.</li></ul>' },
-        { type: 'note', html: '<p><b>Подготовка:</b> Track 17 (включаете вы, демонстрация экрана со звуком; скрипт — SB p. 202); SB pp. 50–53, 172, Files 13–14 (pp. 187–188); Miro: рамки <i>Calm it down / Make it worse</i>, таймлайн <i>wish</i>, поле для реформуляции.</p><p>Студенты не видят ключей и заметок; вы видите всё в режиме #teacher.</p>' }
+        { type: 'note', html: '<p><b>Подготовка:</b> Track 17 (плеер в разделе 4; скрипт — SB p. 202); SB pp. 50–53, 172, Files 13–14 (pp. 187–188); Miro: рамки <i>Calm it down / Make it worse</i>, таймлайн <i>wish</i>, поле для реформуляции.</p><p>Студенты не видят ключей и заметок; вы видите всё в режиме #teacher.</p>' }
       ] },
 
     { id: 's1', short: '1 Warm-up', title: 'Warm-up: from relationships to conflict', meta: '5 min',
@@ -115,7 +115,9 @@ window.LESSON = {
 
     { id: 's4', short: '4 Listening', title: 'Listening: two arguments', meta: 'SB p. 52 · ex. 6–8 · Audio 17 · 15 min',
       blocks: [
-        { type: 'lead', html: 'Two conversations, two arguments: the first at home, the second at work. Your teacher will play the audio.' },
+        { type: 'lead', html: 'Two conversations, two arguments: the first at home, the second at work. Listen and answer the questions.' },
+        { type: 'audio', src: '../../assets/audio/u06-track17-two-arguments.mp3', src_label: 'Audio 17', title: 'Two arguments',
+          marks: [['Conversation 1', 0], ['Conversation 2', 90]] },
         { type: 'ex', id: 'l6', kind: 'open', src: 'SB p. 52 · ex. 6', title: 'What’s the main problem?', mode: 'Listen · 4 min',
           prompts: [{ q: 'Conversation 1', rows: 1 }, { q: 'Conversation 2', rows: 1 }],
           model: '<p>1 untidiness — leaving things lying around (someone almost broke his neck tripping over a bag) · 2 poor communication — clients cancelled because nobody got back to them about discounts</p>' },
@@ -142,7 +144,7 @@ window.LESSON = {
             { q: 'Have you ever had any recurrent arguments with anyone? What about? Did you resolve them?', rows: 2 }
           ],
           model: '<p><b>1</b> an apology (<i>I’m sorry. It’s just that it’s been a long day and this was the last straw</i>), a suggestion to stop (<i>Can we just move on?</i>) and an offer of help (<i>Can I give you a hand?</i>).<br><b>2</b> recognising the misunderstanding (<i>I can see we’ve got our wires crossed</i>), an apology (<i>I was probably being a bit petulant, for which I apologise</i>) and agreeing to move on (<i>There’s no point crying over spilt milk</i>).</p>' },
-        { type: 'note', html: '<p>Track 17 включаете вы; скрипт — SB p. 202. По времени: найти в скрипте фразы из ex. 1 (<i>It’s not the end of the world, it came out wrong, try to see it from our point of view, wires crossed, cleared the air, spilt milk</i>).</p>' }
+        { type: 'note', html: '<p>Track 17 — в плеере выше (кнопки перехода к каждому разговору); скрипт — SB p. 202. По времени: найти в скрипте фразы из ex. 1 (<i>It’s not the end of the world, it came out wrong, try to see it from our point of view, wires crossed, cleared the air, spilt milk</i>).</p>' }
       ] },
 
     { id: 's5', short: '5 Defending', title: 'Defending and excusing', meta: 'SB p. 53 · ex. 9–10 · 10 min',
